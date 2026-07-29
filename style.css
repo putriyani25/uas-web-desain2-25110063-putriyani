@@ -1,8 +1,13 @@
+/* PENGATURAN WARNA WARKOP */
 :root {
     --green: #2E7D32;
+    /* Hijau Khas Spanduk Warkop */
     --dark-green: #1B5E20;
+    /* Hijau Gelap */
     --red: #D32F2F;
+    /* Merah */
     --yellow: #FBC02D;
+    /* Kuning */
     --bg-light: #F8F9FA;
     --text-dark: #212529;
 }
@@ -23,7 +28,7 @@ body {
     background-color: var(--green) !important;
 }
 
-
+/* NAVBAR */
 .custom-navbar {
     background-color: var(--dark-green) !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -74,12 +79,13 @@ body {
     background-color: #F9A825;
 }
 
-
+/* HERO SECTION (Centered Layout) */
 .hero-section {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    /* Ganti URL gambar jika ada gambar warkop asli */
     background: linear-gradient(rgba(27, 94, 32, 0.8), rgba(0, 0, 0, 0.7)),
         url("img/mie.jpg") center/cover no-repeat;
     margin: 0;
@@ -93,7 +99,7 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
-
+/* FITUR ICONS */
 .icon-circle {
     width: 70px;
     height: 70px;
@@ -116,7 +122,7 @@ body {
     border-bottom: 4px solid var(--red);
 }
 
-
+/* MENU LAYOUT HORIZONTAL */
 .title-line {
     width: 80px;
     height: 4px;
@@ -159,7 +165,7 @@ body {
     border-color: var(--green) !important;
 }
 
-
+/* LOGIKA SINGLE PAGE APPLICATION */
 .page-view {
     display: none;
 }
@@ -169,7 +175,7 @@ body {
     animation: fadeup 0.4s ease;
 }
 
-
+/* PENGATURAN CARD MENU FOTO */
 .product-card {
     border-radius: 15px;
     overflow: hidden;
@@ -204,6 +210,7 @@ body {
     color: white;
 }
 
+/* PENGATURAN CARD MENU FOTO */
 .product-card {
     border-radius: 15px;
     overflow: hidden;
@@ -219,9 +226,13 @@ body {
 
 .product-card img {
     height: 180px;
+    /* Mengunci tinggi semua gambar */
     width: 100%;
+    /* Lebar full menyesuaikan kolom */
     object-fit: cover;
+    /* Memotong gambar proporsional tanpa gepeng */
     border-bottom: 2px solid var(--green);
+    /* Garis aksen khas warkop */
 }
 
 .btn-beli {
@@ -234,7 +245,7 @@ body {
     color: white;
 }
 
-
+/* ANIMASI */
 @keyframes fadeup {
     from {
         opacity: 0;
