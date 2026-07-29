@@ -1,31 +1,24 @@
 function pindahHalaman(namaHalaman) {
-    // Sembunyikan semua halaman
     document.querySelectorAll('.page-view').forEach(function (el) {
         el.classList.remove('active');
     });
 
-    // Tampilkan halaman yang dipilih
     const target = document.getElementById('page-' + namaHalaman);
     if (target) target.classList.add('active');
 
-    // Update class active di navbar
     document.querySelectorAll('.nav-link-page').forEach(function (link) {
         const isActive = link.getAttribute('data-page') === namaHalaman;
         link.classList.toggle('active', isActive);
     });
 
-    // Otomatis scroll ke atas tanpa jeda
     window.scrollTo({ top: 0, behavior: 'instant' });
 
-    // Auto-close hamburger menu di tampilan mobile saat link diklik
     const navbar = document.getElementById("navbarLinks");
     if (navbar.classList.contains("show")) {
-        // Menggunakan trigger bootstrap (jQuery) agar animasi penutupan berjalan
         $('.navbar-toggler').click();
     }
 }
 
-// Event listener klik tombol navigasi dan button lainnya
 document.querySelectorAll('[data-page]').forEach(function (el) {
     el.addEventListener('click', function (e) {
         e.preventDefault();
@@ -33,7 +26,6 @@ document.querySelectorAll('[data-page]').forEach(function (el) {
     });
 });
 
-// LOGIKA PEMESANAN & MODAL
 let harga = 0;
 let jumlah = 1;
 
@@ -44,7 +36,6 @@ document.querySelectorAll(".btn-beli").forEach(function (btn) {
         harga = Number(this.dataset.harga);
         jumlah = 1;
 
-        // Tampilkan di modal
         document.getElementById("namaProduk").innerText = this.dataset.nama;
         document.getElementById("hargaProduk").innerText = "Rp" + harga.toLocaleString("id-ID");
         document.getElementById("jumlahProduk").innerText = jumlah;
@@ -82,23 +73,19 @@ document.getElementById("btnPesan").addEventListener("click", function () {
     $("#detailPesanan").modal("hide");
 });
 
-// LOGIKA FILTER KATEGORI MENU
 const filterButtons = document.querySelectorAll('.filter-btn');
 const menuItems = document.querySelectorAll('.menu-item');
 
 filterButtons.forEach(function (button) {
     button.addEventListener('click', function () {
-        // Hapus class active dari semua tombol filter
         filterButtons.forEach(function (btn) {
             btn.classList.remove('active');
         });
-        // Tambahkan active ke tombol yang diklik
         this.classList.add('active');
 
         const filter = this.getAttribute('data-filter');
 
         menuItems.forEach(function (item) {
-            // Tampilkan jika filter 'semua' atau class item cocok dengan filter
             if (filter === 'semua' || item.classList.contains(filter)) {
                 item.style.display = '';
             } else {
@@ -108,7 +95,6 @@ filterButtons.forEach(function (button) {
     });
 });
 
-// VALIDASI FORM KIRIM PESAN WARKOP
 const formKontak = document.getElementById("formKontak");
 
 if (formKontak) {
